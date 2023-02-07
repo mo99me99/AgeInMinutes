@@ -8,17 +8,50 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="@color/backgroundColor"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="16dp">
 
     <TextView
-        android:layout_width="228dp"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
         android:layout_height="57dp"
         android:text="CALCULATE YOUR"
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="25sp"
+
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="102dp"
+        android:layout_height="64dp"
+        android:background="@color/ageTextBackgroundColor"
+        android:padding="10dp"
+        android:text="Age"
+        android:textAlignment="center"
+        android:textColor="@color/ageTextColor"
+        android:textSize="25sp"
         android:textStyle="bold"
 
         />
+    <TextView
+        android:id="@+id/tvInMinutes"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:text="IN MINUTES"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Date"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
 
 </LinearLayout>
