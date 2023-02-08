@@ -75,9 +75,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun monthCal(selectedDate:Long  , currentDate:Long){
         //calculate how a month longs
-        val aMonth  = 2592000000//1000*60*60*24*30
+        val aMonth  = 2_592_000_000//1000*60*60*24*30
         //calculate result in MONTH : difference of current date and selected date
-        val difference = ((currentDate -selectedDate)/aMonth)
+        val difference = ((currentDate -selectedDate)/aMonth)-1
 
         //set result in MONTHS
         tvResultInMonths.text = difference.toString()
