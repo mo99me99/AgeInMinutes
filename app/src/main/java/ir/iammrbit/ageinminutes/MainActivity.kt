@@ -6,10 +6,20 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.math.BigInteger
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
+//    private val aMinute : Long = 1000*60
+//    private val aHour : Long = aMinute*60
+//    private val aDay :Long = aHour*24
+//    private val aMonth = aDay*30
+//    private val aYear:Long = aMonth*12
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,16 +44,22 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,
                     "The chosen year is $selectedYear , the month is ${selectedMonth+1} and the day is $selectedDayOfMonth" ,
                     Toast.LENGTH_SHORT).show()
-                val selectedDate = "$selectedDayOfMonth/${selectedMonth+1}/$selectedYear"
+                val selectedDate = "$selectedDayOfMonth/$selectedMonth/$selectedYear"
                 tvSelectedDate.text = selectedDate
                 val theDate = sdf.parse(selectedDate)
-                //Dates in minutes
-                val selectedDateInMinutes = theDate!!.time / 60000
-                val currentDateInMinutes = currentDate!!.time/60000
-                //calculate result in MINUTES : difference of current date and selected date
-                val differenceInMinutes = (currentDateInMinutes - selectedDateInMinutes)
-                //set result in MINUTES
-                tvResultInMinutes.text = differenceInMinutes.toString()},
+                val selectedDateInMilliSecond:Long = theDate!!.time
+                val currentDateInMilliSeconds:Long = currentDate!!.time
+                //result in years
+                yearsCal(selectedDateInMilliSecond , currentDateInMilliSeconds)
+               //result in months
+                monthCal(selectedDateInMilliSecond , currentDateInMilliSeconds)
+                //TODO result in days
+                //TODO result in hours
+                //TODO result in minutes
+                minutesCal(selectedDateInMilliSecond , currentDateInMilliSeconds)
+                // result in seconds
+                secondCal(selectedDateInMilliSecond , currentDateInMilliSeconds)
+                                               },
             //pass arguments
             year ,month,dayOfMonth )
         //limit the date selection to now or past
@@ -51,4 +67,38 @@ class MainActivity : AppCompatActivity() {
         //show date picker dialog to take a date from user
         dpd.show()
     }
+    private fun yearsCal(selectedDate: Long , currentDate: Long){
+        val aYear =  31104000000//1000*60*60*24*365
+        val diffInYear = (currentDate-selectedDate)/aYear
+        tvResultInYears.text = diffInYear.toString()
+    }
+
+    private fun monthCal(selectedDate:Long  , currentDate:Long){
+        //calculate how a month longs
+        val aMonth  = 2592000000//1000*60*60*24*30
+        //calculate result in MONTH : difference of current date and selected date
+        val difference = ((currentDate -selectedDate)/aMonth)
+
+        //set result in MONTHS
+        tvResultInMonths.text = difference.toString()
+
+    }
+
+    private fun minutesCal(selectedDate : Long , currentDate:Long){
+        //calculate how a minute longs
+        val aMinute = 1000*60
+        //calculate result in MINUTES : difference of current date and selected date
+        val difference = (currentDate - selectedDate)/aMinute
+        //set result in MINUTES
+        tvResultInMinutes.text = difference.toString()
+    }
+    private fun secondCal(selectedDate : Long , currentDate:Long){
+        //calculate how a minute longs
+        val aSecond= 1000
+        //calculate result in MINUTES : difference of current date and selected date
+        val difference = ((currentDate - selectedDate)/aSecond)
+        //set result in MINUTES
+        tvResultInSeconds.text = difference.toString()
+    }
+
 }

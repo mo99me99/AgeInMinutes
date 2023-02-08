@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="15dp"
+    android:layout_marginTop="0dp"
+    android:background="@color/backgroundColor"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:background="@color/backgroundColor"
-    tools:context=".MainActivity"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
 
     <TextView
 
@@ -21,7 +22,6 @@
         android:textColor="@color/textColor"
         android:textSize="25sp"
         android:textStyle="bold"
-
         />
 
     <TextView
@@ -38,22 +38,23 @@
 
 
         />
-    <TextView
-        android:id="@+id/tvInMinutes"
-        android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:text="IN MINUTES"
-        android:textAlignment="center"
-        android:textColor="@color/textColor"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvInMinutes"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="57dp"-->
+    <!--        android:text="IN MINUTES"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="@color/textColor"-->
+    <!--        android:textSize="25sp"-->
+    <!--        android:textStyle="bold" />-->
 
     <Button
         android:id="@+id/btnDatePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Select Date"
+        android:text="Select your birthday"
         android:textColor="#929292"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -76,6 +77,38 @@
         android:textSize="18sp" />
 
     <TextView
+        android:id="@+id/tvResultInYears"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/textColor"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Years"
+        android:textColor="@color/lightGreyTextColor"
+        android:textSize="18sp"
+        />
+    <TextView
+        android:id="@+id/tvResultInMonths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/textColor"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Months"
+        android:textColor="@color/lightGreyTextColor"
+        android:textSize="18sp"
+        />
+    <TextView
         android:id="@+id/tvResultInMinutes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,9 +120,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Age in minutes"
+        android:text="Minutes"
         android:textColor="@color/lightGreyTextColor"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/tvResultInSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/textColor"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Seconds"
+        android:textColor="@color/lightGreyTextColor"
+        android:textSize="18sp"
+
+        />
 
 
 </LinearLayout>

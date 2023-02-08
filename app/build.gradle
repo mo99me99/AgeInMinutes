@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "ir.iammrbit.ageinminutes"
@@ -29,9 +29,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    buildFeatures {
-        viewBinding = true
     }
 }
 
