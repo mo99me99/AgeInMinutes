@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         dpd.show()
     }
     private fun yearsCal(selectedDate: Long , currentDate: Long){
-        val aYear =  31104000000//1000*60*60*24*365
+        val aYear =  31_536_000_000//1000*60*60*24*365
         val diffInYear = (currentDate-selectedDate)/aYear
         tvResultInYears.text = diffInYear.toString()
     }
