@@ -66,6 +66,7 @@
         android:layout_marginTop="20dp"
         android:textColor="@color/textColor"
         android:textSize="18sp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,14 +76,20 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/tvResultInMinutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/textColor"
+        android:textSize="25sp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Age in minutes"
         android:textColor="@color/lightGreyTextColor"
-        android:textSize="18sp"
-        />
+        android:textSize="18sp" />
 
 
 </LinearLayout>

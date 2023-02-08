@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnDatePicker.setOnClickListener {
-            clickDatePicker(it)
+        btnDatePicker.setOnClickListener {view:View ->
+            clickDatePicker(view)
         }
     }
 
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val year = myCalender.get(Calendar.YEAR)
         val month = myCalender.get(Calendar.MONTH)
         val dayOfMonth = myCalender.get(Calendar.DAY_OF_MONTH)
-        DatePickerDialog(this ,
+        val dpd = DatePickerDialog(this ,
             DatePickerDialog.OnDateSetListener { view, selectedYear, selectedMonth, selectedDayOfMonth ->
                 Toast.makeText(this,
                     "The chosen year is $selectedYear , the month is ${selectedMonth+1} and the day is $selectedDayOfMonth" ,
@@ -33,8 +33,15 @@ class MainActivity : AppCompatActivity() {
                 tvSelectedDate.text = selectedDate
                 val sdf = SimpleDateFormat("dd/MM/yyyy" , Locale.ENGLISH)
                 val theDate = sdf.parse(selectedDate)
+                val selectedDateInMinutes = theDate!!.time / 60000
+                val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
+                val currentDateInMinutes = currentDate!!.time/60000
+                val differenceInMinutes = (currentDateInMinutes - selectedDateInMinutes)
 
+                tvResultInMinutes.text = differenceInMinutes.toString()
                                                },
-            year ,month,dayOfMonth ).show()
+            year ,month,dayOfMonth )
+        dpd.datePicker.setMaxDate(Date().time-8640000)
+        dpd.show()
     }
 }
