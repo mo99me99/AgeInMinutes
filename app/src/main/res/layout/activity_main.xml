@@ -12,6 +12,7 @@
     android:padding="16dp">
 
     <TextView
+
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="57dp"
@@ -19,7 +20,9 @@
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+
+        />
 
     <TextView
         android:id="@+id/tvAge"
@@ -32,6 +35,7 @@
         android:textColor="@color/ageTextColor"
         android:textSize="25sp"
         android:textStyle="bold"
+
 
         />
     <TextView
@@ -60,6 +64,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:textColor="@color/textColor"
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Selected Date"
         android:textColor="@color/lightGreyTextColor"
         android:textSize="18sp" />
@@ -71,7 +81,8 @@
         android:layout_marginTop="20dp"
         android:text="Age in minutes"
         android:textColor="@color/lightGreyTextColor"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        />
 
 
 </LinearLayout>
